@@ -7,6 +7,9 @@
 
   <title>Shahbaz Raza | Zita Telecom</title>
 
+  <!-- FAVICON -->
+  <link rel="icon" href="https://razashahbaz0.github.io/zitatel/Zlogo.png">
+
   <style>
 
     :root{
@@ -35,13 +38,12 @@
 
     body{
       margin:0;
-      padding:20px;
+      padding:30px 20px;
       background:var(--bg);
       font-family:Segoe UI, Arial, sans-serif;
       display:flex;
       justify-content:center;
-      align-items:center;
-      min-height:100vh;
+      align-items:flex-start;
       box-sizing:border-box;
       transition:0.3s ease;
     }
@@ -49,17 +51,21 @@
     .card{
       background:var(--card);
       width:100%;
-      max-width:720px;
-      border-radius:20px;
-      padding:28px;
+      max-width:760px;
+      border-radius:22px;
+      padding:34px;
       box-shadow:var(--shadow);
       box-sizing:border-box;
       transition:0.3s ease;
     }
 
+    .card:hover{
+      transform:translateY(-2px);
+    }
+
     .top{
       display:flex;
-      gap:30px;
+      gap:40px;
       justify-content:space-between;
       align-items:center;
       flex-wrap:wrap;
@@ -67,7 +73,7 @@
 
     .left{
       flex:1;
-      min-width:250px;
+      min-width:280px;
     }
 
     .right{
@@ -75,41 +81,54 @@
     }
 
     .logo{
-      width:170px;
-      margin-bottom:20px;
+      width:180px;
+      margin-bottom:24px;
       display:block;
     }
 
     .name{
-      font-size:30px;
+      font-size:54px;
       font-weight:700;
       color:var(--blue);
-      margin-bottom:5px;
+      margin-bottom:10px;
+      line-height:1.1;
       transition:0.3s ease;
     }
 
     .designation{
       color:var(--gold);
       font-weight:600;
-      margin-bottom:5px;
+      margin-bottom:10px;
+      font-size:20px;
     }
 
     .company{
       color:var(--text);
-      margin-bottom:20px;
-      font-size:15px;
+      margin-bottom:28px;
+      font-size:18px;
     }
 
     .info{
-      margin:10px 0;
+      margin:16px 0;
       color:var(--text);
-      font-size:15px;
+      font-size:18px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .info-icon{
+      font-size:30px;
+      width:34px;
+      text-align:center;
+      flex-shrink:0;
     }
 
     .info a{
       color:var(--text);
       text-decoration:none;
       transition:0.3s ease;
+      word-break:break-word;
     }
 
     .info a:hover{
@@ -124,62 +143,73 @@
       color:var(--gold);
       font-weight:700;
       letter-spacing:1px;
-      font-size:14px;
+      font-size:16px;
     }
 
     .qr-sub{
       color:var(--blue);
-      font-size:20px;
+      font-size:38px;
       font-weight:700;
-      margin-bottom:18px;
+      margin-bottom:20px;
+      line-height:1.1;
       transition:0.3s ease;
     }
 
     .qr-box{
       background:var(--card);
-      border:2px solid var(--gold);
-      border-radius:14px;
-      padding:12px;
+      border:3px solid var(--gold);
+      border-radius:18px;
+      padding:14px;
       display:inline-block;
+      box-shadow:0 4px 18px rgba(0,0,0,0.08);
       transition:0.3s ease;
     }
 
     .qr-box img{
-      width:180px;
+      width:240px;
       display:block;
-      border-radius:8px;
+      border-radius:10px;
       cursor:pointer;
     }
 
     .scan{
-      margin-top:10px;
+      margin-top:14px;
       color:var(--muted);
-      font-size:13px;
+      font-size:15px;
     }
 
     .footer{
-      margin-top:25px;
-      padding-top:15px;
+      margin-top:32px;
+      padding-top:18px;
       border-top:1px solid var(--gold);
       text-align:center;
       color:var(--text);
-      font-size:12px;
-      letter-spacing:0.5px;
+      font-size:13px;
+      letter-spacing:0.7px;
     }
+
+    /* MOBILE */
 
     @media(max-width:600px){
 
       body{
-        padding:14px;
+        padding:18px;
       }
 
       .card{
-        padding:22px;
+        padding:26px;
+        border-radius:20px;
       }
 
       .top{
         flex-direction:column;
         align-items:flex-start;
+        gap:34px;
+      }
+
+      .left{
+        width:100%;
+        min-width:auto;
       }
 
       .right{
@@ -189,14 +219,48 @@
 
       .logo{
         width:150px;
+        margin-bottom:22px;
       }
 
       .name{
-        font-size:26px;
+        font-size:34px;
+      }
+
+      .designation{
+        font-size:17px;
+      }
+
+      .company{
+        font-size:16px;
+        margin-bottom:24px;
+      }
+
+      .info{
+        font-size:16px;
+        gap:10px;
+      }
+
+      .info-icon{
+        font-size:28px;
+        width:30px;
+      }
+
+      .qr-sub{
+        font-size:28px;
+      }
+
+      .qr-box{
+        padding:12px;
       }
 
       .qr-box img{
-        width:200px;
+        width:100%;
+        max-width:280px;
+      }
+
+      .footer{
+        font-size:12px;
+        line-height:1.6;
       }
 
     }
@@ -245,7 +309,8 @@
 
         <!-- PHONE -->
         <div class="info">
-          📞 
+          <span class="info-icon">📞</span>
+
           <a href="tel:+919147081013">
             +91 91470 81013
           </a>
@@ -253,7 +318,8 @@
 
         <!-- EMAIL -->
         <div class="info">
-          📧 
+          <span class="info-icon">📧</span>
+
           <a href="mailto:shahbaz@zitatel.com">
             shahbaz@zitatel.com
           </a>
@@ -261,7 +327,8 @@
 
         <!-- WEBSITE -->
         <div class="info">
-          🌐 
+          <span class="info-icon">🌐</span>
+
           <a href="https://www.zitatel.com" target="_blank">
             www.zitatel.com
           </a>
