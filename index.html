@@ -9,26 +9,52 @@
 
   <style>
 
+    :root{
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --text:#334155;
+      --muted:#64748B;
+      --blue:#1E3A8A;
+      --gold:#C9A54C;
+      --shadow:0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    @media (prefers-color-scheme: dark){
+
+      :root{
+        --bg:#0F172A;
+        --card:#111827;
+        --text:#E2E8F0;
+        --muted:#94A3B8;
+        --blue:#60A5FA;
+        --gold:#E4C46C;
+        --shadow:0 8px 25px rgba(0,0,0,0.45);
+      }
+
+    }
+
     body{
       margin:0;
       padding:20px;
-      background:#f4f4f4;
+      background:var(--bg);
       font-family:Segoe UI, Arial, sans-serif;
       display:flex;
       justify-content:center;
       align-items:center;
       min-height:100vh;
       box-sizing:border-box;
+      transition:0.3s ease;
     }
 
     .card{
-      background:#ffffff;
+      background:var(--card);
       width:100%;
       max-width:720px;
       border-radius:20px;
       padding:28px;
-      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+      box-shadow:var(--shadow);
       box-sizing:border-box;
+      transition:0.3s ease;
     }
 
     .top{
@@ -57,35 +83,37 @@
     .name{
       font-size:30px;
       font-weight:700;
-      color:#1E3A8A;
+      color:var(--blue);
       margin-bottom:5px;
+      transition:0.3s ease;
     }
 
     .designation{
-      color:#C9A54C;
+      color:var(--gold);
       font-weight:600;
       margin-bottom:5px;
     }
 
     .company{
-      color:#475569;
+      color:var(--text);
       margin-bottom:20px;
       font-size:15px;
     }
 
     .info{
       margin:10px 0;
-      color:#334155;
+      color:var(--text);
       font-size:15px;
     }
 
     .info a{
-      color:#334155;
+      color:var(--text);
       text-decoration:none;
+      transition:0.3s ease;
     }
 
     .info a:hover{
-      color:#1E3A8A;
+      color:var(--blue);
     }
 
     .name-link{
@@ -93,25 +121,27 @@
     }
 
     .qr-title{
-      color:#C9A54C;
+      color:var(--gold);
       font-weight:700;
       letter-spacing:1px;
       font-size:14px;
     }
 
     .qr-sub{
-      color:#1E3A8A;
+      color:var(--blue);
       font-size:20px;
       font-weight:700;
       margin-bottom:18px;
+      transition:0.3s ease;
     }
 
     .qr-box{
-      background:#ffffff;
-      border:2px solid #C9A54C;
+      background:var(--card);
+      border:2px solid var(--gold);
       border-radius:14px;
       padding:12px;
       display:inline-block;
+      transition:0.3s ease;
     }
 
     .qr-box img{
@@ -123,16 +153,16 @@
 
     .scan{
       margin-top:10px;
-      color:#64748B;
+      color:var(--muted);
       font-size:13px;
     }
 
     .footer{
       margin-top:25px;
       padding-top:15px;
-      border-top:1px solid #C9A54C;
+      border-top:1px solid var(--gold);
       text-align:center;
-      color:#475569;
+      color:var(--text);
       font-size:12px;
       letter-spacing:0.5px;
     }
@@ -172,6 +202,7 @@
     }
 
   </style>
+
 </head>
 
 <body>
