@@ -1,122 +1,240 @@
-<table cellpadding="0" cellspacing="0" style="font-family:Segoe UI, Arial, sans-serif; font-size:14px; line-height:1.4;">
-  <tr>
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- LEFT SECTION -->
-    <td style="padding-right:20px; border-right:2px solid #C9A54C; vertical-align:top;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- LOGO -->
-      <img 
-        src="https://razashahbaz0.github.io/zitatel/Zlogo.png" 
-        width="150" 
-        style="display:block;"
-      ><br>
+  <title>Shahbaz Raza | Zita Telecom</title>
 
-      <!-- NAME -->
-      <span style="font-size:20px; font-weight:600; color:#1E3A8A;">
-        Shahbaz Raza
-      </span><br>
+  <style>
 
-      <!-- DESIGNATION -->
-      <span style="font-size:13px; color:#C9A54C; font-weight:600;">
-        Technical Support
-      </span><br>
+    body{
+      margin:0;
+      padding:20px;
+      background:#f4f4f4;
+      font-family:Segoe UI, Arial, sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
 
-      <!-- COMPANY -->
-      <span style="color:#334155;">
-        Zita Telecom Private Limited
-      </span><br><br>
+    .card{
+      background:#ffffff;
+      width:100%;
+      max-width:700px;
+      border-radius:18px;
+      padding:25px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+      box-sizing:border-box;
+    }
 
-      <!-- PHONE -->
-      <span style="color:#475569;">
-        📞 
-        <a 
-          href="tel:+919147081013" 
-          style="color:#475569; text-decoration:none;"
-        >
-          +91 91470 81013
-        </a>
-      </span><br>
+    .top{
+      display:flex;
+      gap:25px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
 
-      <!-- EMAIL -->
-      <span style="color:#475569;">
-        ✉ 
-        <a 
-          href="mailto:shahbaz@zitatel.com" 
-          style="color:#475569; text-decoration:none;"
-        >
-          shahbaz@zitatel.com
-        </a>
-      </span><br>
+    .left{
+      flex:1;
+      min-width:250px;
+    }
 
-      <!-- WEBSITE -->
-      <span style="color:#475569;">
-        🌐 
-        <a 
-          href="https://www.zitatel.com" 
-          style="color:#475569; text-decoration:none;"
-        >
-          www.zitatel.com
-        </a>
-      </span>
+    .right{
+      text-align:center;
+    }
 
-    </td>
+    .logo{
+      width:170px;
+      margin-bottom:20px;
+    }
 
-    <!-- RIGHT SECTION -->
-    <td style="padding-left:20px; text-align:center; vertical-align:top;">
+    .name{
+      font-size:30px;
+      font-weight:700;
+      color:#1E3A8A;
+      margin-bottom:5px;
+    }
 
-      <!-- TITLE -->
-      <span style="color:#C9A54C; font-weight:600; letter-spacing:1px;">
-        SCAN TO
-      </span><br>
+    .designation{
+      color:#C9A54C;
+      font-weight:600;
+      margin-bottom:5px;
+    }
 
-      <span style="color:#1E3A8A; font-weight:700; font-size:16px;">
-        SAVE CONTACT
-      </span><br><br>
+    .company{
+      color:#475569;
+      margin-bottom:20px;
+    }
 
-      <!-- QR CONTAINER -->
-      <div style="
-        display:inline-block;
-        padding:10px;
-        background:#ffffff;
-        border:2px solid #C9A54C;
-        border-radius:12px;
-      ">
+    .info{
+      margin:8px 0;
+      color:#334155;
+      font-size:15px;
+    }
+
+    .info a{
+      color:#334155;
+      text-decoration:none;
+    }
+
+    .qr-title{
+      color:#C9A54C;
+      font-weight:700;
+      letter-spacing:1px;
+      font-size:14px;
+    }
+
+    .qr-sub{
+      color:#1E3A8A;
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .qr-box{
+      background:#fff;
+      border:2px solid #C9A54C;
+      border-radius:14px;
+      padding:12px;
+      display:inline-block;
+    }
+
+    .qr-box img{
+      width:180px;
+      display:block;
+      border-radius:8px;
+    }
+
+    .scan{
+      margin-top:10px;
+      color:#64748B;
+      font-size:13px;
+    }
+
+    .footer{
+      margin-top:25px;
+      padding-top:15px;
+      border-top:1px solid #C9A54C;
+      text-align:center;
+      color:#475569;
+      font-size:12px;
+      letter-spacing:0.5px;
+    }
+
+    @media(max-width:600px){
+
+      .top{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .right{
+        width:100%;
+        text-align:center;
+      }
+
+      .logo{
+        width:150px;
+      }
+
+      .name{
+        font-size:26px;
+      }
+
+      .qr-box img{
+        width:200px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="top">
+
+      <!-- LEFT -->
+      <div class="left">
 
         <img 
-          src="https://razashahbaz0.github.io/zitatel/Contact.jpeg"
-          width="130"
-          style="
-            display:block;
-            border-radius:6px;
-          "
+          src="https://razashahbaz0.github.io/zitatel/Zlogo.png"
+          class="logo"
         >
 
-      </div><br>
+        <div class="name">
+          Shahbaz Raza
+        </div>
 
-      <!-- QR TEXT -->
-      <span style="font-size:12px; color:#475569;">
-        Open Camera • Scan • Save
-      </span>
+        <div class="designation">
+          Technical Support
+        </div>
 
-    </td>
+        <div class="company">
+          Zita Telecom Private Limited
+        </div>
 
-  </tr>
+        <div class="info">
+          📞 
+          <a href="tel:+919147081013">
+            +91 91470 81013
+          </a>
+        </div>
 
-  <!-- FOOTER -->
-  <tr>
-    <td colspan="2" style="padding-top:12px;">
+        <div class="info">
+          ✉ 
+          <a href="mailto:shahbaz@zitatel.com">
+            shahbaz@zitatel.com
+          </a>
+        </div>
 
-      <hr style="border:none; border-top:1px solid #C9A54C; margin-bottom:10px;">
+        <div class="info">
+          🌐 
+          <a href="https://www.zitatel.com">
+            www.zitatel.com
+          </a>
+        </div>
 
-      <div style="
-        text-align:center;
-        font-size:12px;
-        color:#334155;
-        letter-spacing:0.5px;
-      ">
-        BUILDING TRUST • STRENGTHENING CONNECTIONS • POWERING POSSIBILITIES
       </div>
 
-    </td>
-  </tr>
-</table>
+      <!-- RIGHT -->
+      <div class="right">
+
+        <div class="qr-title">
+          SCAN TO
+        </div>
+
+        <div class="qr-sub">
+          SAVE CONTACT
+        </div>
+
+        <div class="qr-box">
+
+          <img 
+            src="https://razashahbaz0.github.io/zitatel/Contact.jpeg"
+          >
+
+        </div>
+
+        <div class="scan">
+          Open Camera • Scan • Save
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer">
+      BUILDING TRUST • STRENGTHENING CONNECTIONS • POWERING POSSIBILITIES
+    </div>
+
+  </div>
+
+</body>
+</html>
