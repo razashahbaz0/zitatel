@@ -18,23 +18,24 @@
       justify-content:center;
       align-items:center;
       min-height:100vh;
+      box-sizing:border-box;
     }
 
     .card{
       background:#ffffff;
       width:100%;
-      max-width:700px;
-      border-radius:18px;
-      padding:25px;
+      max-width:720px;
+      border-radius:20px;
+      padding:28px;
       box-shadow:0 8px 25px rgba(0,0,0,0.08);
       box-sizing:border-box;
     }
 
     .top{
       display:flex;
-      gap:25px;
-      align-items:center;
+      gap:30px;
       justify-content:space-between;
+      align-items:center;
       flex-wrap:wrap;
     }
 
@@ -50,6 +51,7 @@
     .logo{
       width:170px;
       margin-bottom:20px;
+      display:block;
     }
 
     .name{
@@ -68,16 +70,25 @@
     .company{
       color:#475569;
       margin-bottom:20px;
+      font-size:15px;
     }
 
     .info{
-      margin:8px 0;
+      margin:10px 0;
       color:#334155;
       font-size:15px;
     }
 
     .info a{
       color:#334155;
+      text-decoration:none;
+    }
+
+    .info a:hover{
+      color:#1E3A8A;
+    }
+
+    .name-link{
       text-decoration:none;
     }
 
@@ -96,7 +107,7 @@
     }
 
     .qr-box{
-      background:#fff;
+      background:#ffffff;
       border:2px solid #C9A54C;
       border-radius:14px;
       padding:12px;
@@ -107,6 +118,7 @@
       width:180px;
       display:block;
       border-radius:8px;
+      cursor:pointer;
     }
 
     .scan{
@@ -126,6 +138,14 @@
     }
 
     @media(max-width:600px){
+
+      body{
+        padding:14px;
+      }
+
+      .card{
+        padding:22px;
+      }
 
       .top{
         flex-direction:column;
@@ -163,23 +183,36 @@
       <!-- LEFT -->
       <div class="left">
 
-        <img 
-          src="https://razashahbaz0.github.io/zitatel/Zlogo.png"
-          class="logo"
+        <!-- LOGO -->
+        <a href="https://www.zitatel.com" target="_blank">
+          <img 
+            src="https://razashahbaz0.github.io/zitatel/Zlogo.png"
+            class="logo"
+          >
+        </a>
+
+        <!-- NAME -->
+        <a 
+          href="https://www.linkedin.com/in/razashahbaz"
+          target="_blank"
+          class="name-link"
         >
+          <div class="name">
+            Shahbaz Raza
+          </div>
+        </a>
 
-        <div class="name">
-          Shahbaz Raza
-        </div>
-
+        <!-- DESIGNATION -->
         <div class="designation">
           Technical Support
         </div>
 
+        <!-- COMPANY -->
         <div class="company">
           Zita Telecom Private Limited
         </div>
 
+        <!-- PHONE -->
         <div class="info">
           📞 
           <a href="tel:+919147081013">
@@ -187,6 +220,7 @@
           </a>
         </div>
 
+        <!-- EMAIL -->
         <div class="info">
           ✉ 
           <a href="mailto:shahbaz@zitatel.com">
@@ -194,9 +228,10 @@
           </a>
         </div>
 
+        <!-- WEBSITE -->
         <div class="info">
           🌐 
-          <a href="https://www.zitatel.com">
+          <a href="https://www.zitatel.com" target="_blank">
             www.zitatel.com
           </a>
         </div>
@@ -214,11 +249,19 @@
           SAVE CONTACT
         </div>
 
+        <!-- CLICKABLE QR -->
         <div class="qr-box">
 
-          <img 
-            src="https://razashahbaz0.github.io/zitatel/Contact.jpeg"
+          <a 
+            href="https://razashahbaz0.github.io/zitatel/contact.vcf"
+            download
           >
+
+            <img 
+              src="https://razashahbaz0.github.io/zitatel/Contact.jpeg"
+            >
+
+          </a>
 
         </div>
 
@@ -230,6 +273,7 @@
 
     </div>
 
+    <!-- FOOTER -->
     <div class="footer">
       BUILDING TRUST • STRENGTHENING CONNECTIONS • POWERING POSSIBILITIES
     </div>
