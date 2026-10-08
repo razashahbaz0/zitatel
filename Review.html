@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Give Zita Your Review | Zita Telecom</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        min-height: 100vh;
+        background:
+            radial-gradient(circle at top left, rgba(19, 55, 130, 0.12), transparent 35%),
+            radial-gradient(circle at bottom right, rgba(255, 196, 0, 0.14), transparent 35%),
+            #f6f8fc;
+        color: #172033;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+    }
+
+    .review-wrapper {
+        width: 100%;
+        max-width: 760px;
+    }
+
+    .review-card {
+        background: rgba(255,255,255,0.96);
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(12, 32, 75, 0.15);
+        border: 1px solid rgba(20, 50, 100, 0.08);
+    }
+
+    .header {
+    background: linear-gradient(135deg, #082b72, #104aa8);
+    color: white;
+    padding: 30px 35px 32px;
+        text-align: center;
+        position: relative;
+    }
+
+    .header::after {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: rgba(255, 205, 0, 0.10);
+        right: -70px;
+        top: -70px;
+    }
+
+    .logo {
+        font-size: 34px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .logo span {
+        color: #ffd21c;
+    }
+
+
+    .brand-logo {
+    position: relative;
+    z-index: 2;
+    height: 155px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .brand-logo img {
+    width: 205px;
+    height: 145px;
+    object-fit: contain;
+    display: block;
+}
+
+    .header h1 {
+    font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .header p {
+    font-size: 14px;
+        opacity: .92;
+        line-height: 1.6;
+        position: relative;
+        z-index: 2;
+    }
+
+    .content {
+    padding: 30px 32px;
+    }
+
+    .rating-title {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .stars {
+    text-align: center;
+    font-size: 34px;
+        letter-spacing: 5px;
+        color: #ffc400;
+        margin-bottom: 28px;
+    }
+
+    .notice {
+        background: #f0f5ff;
+        border-left: 5px solid #1557c0;
+        padding: 15px 17px;
+        border-radius: 10px;
+        margin-bottom: 22px;
+        color: #33415c;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    .suggestion-label {
+        font-weight: 800;
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: #17376d;
+    }
+
+    .suggestion-box {
+        background: #fafbfe;
+        border: 1px solid #dfe5ef;
+        border-radius: 15px;
+        padding: 22px;
+        min-height: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 17px;
+        line-height: 1.7;
+        color: #26334a;
+        transition: .25s ease;
+    }
+
+    .suggestion-box.active {
+        transform: scale(1.01);
+    }
+
+    .counter {
+        text-align: right;
+        color: #7b8495;
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .button-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    button,
+    .google-button {
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 12px;
+        padding: 15px 20px;
+        transition: .2s ease;
+        text-align: center;
+    }
+
+    .another-button {
+        flex: 1;
+        background: #edf1f7;
+        color: #19345f;
+    }
+
+    .another-button:hover {
+        background: #dfe6f1;
+        transform: translateY(-2px);
+    }
+
+    .google-button {
+        flex: 1.5;
+        background: #0b57d0;
+        color: white;
+        box-shadow: 0 8px 20px rgba(11,87,208,.22);
+    }
+
+    .google-button:hover {
+        background: #0849b2;
+        transform: translateY(-2px);
+    }
+
+    .steps {
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid #e4e8ef;
+    }
+
+    .steps h3 {
+        text-align: center;
+        margin-bottom: 18px;
+        color: #17376d;
+    }
+
+    .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 14px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #596579;
+    }
+
+    .step-number {
+        min-width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #0d4ca5;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 13px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px 25px 28px;
+        color: #7b8495;
+        font-size: 12px;
+    }
+
+    .footer strong {
+        color: #17376d;
+    }
+
+    @media (max-width: 600px) {
+    .brand-logo {
+        height: 135px;
+        margin-bottom: 10px;
+    }
+
+    .brand-logo img {
+        width: 190px;
+        height: 125px;
+    }
+
+        body {
+            padding: 12px;
+        }
+
+        .header {
+            padding: 32px 22px;
+        }
+
+        .header h1 {
+            font-size: 25px;
+        }
+
+        .content {
+            padding: 25px 20px;
+        }
+
+        .button-row {
+            flex-direction: column;
+        }
+
+        .google-button,
+        .copy-button,
+        .another-button {
+            width: 100%;
+        }
+
+        .stars {
+            font-size: 30px;
+        }
+    }
+
+.contact-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.contact-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: .2s ease;
+    border: 1px solid transparent;
+}
+
+.contact-action:hover {
+    transform: translateY(-2px);
+}
+
+.whatsapp-action {
+    background: #e9f8ef;
+    color: #168044 !important;
+    border-color: #c7ead5;
+}
+
+.call-action {
+    background: #edf4ff;
+    color: #1559a6 !important;
+    border-color: #d2e2fa;
+}
+
+.map-action {
+    background: #fff5e8;
+    color: #9a5b00 !important;
+    border-color: #f0dcbb;
+}
+
+.contact-note {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #7b8495;
+}
+
+@media (max-width: 600px) {
+    .brand-logo {
+        height: 90px;
+        margin-bottom: 12px;
+    }
+
+    .brand-logo img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .contact-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="review-wrapper">
+
+
+<div class="review-card">
+
+    <div class="header">
+        <div class="brand-logo">
+            <img
+                src="https://razashahbaz0.github.io/zitatel/Zlogo.png"
+                alt="Zita Telecom"
+            >
+        </div>
+
+        <h1>Give Zita Your Review</h1>
+
+        <p>
+            We love to hear about your experience with
+            Zita Telecom.
+        </p>
+    </div>
+
+    <div class="content">
+
+        <div class="rating-title">
+            How was your experience with Zita?
+        </div>
+
+        <div class="stars">
+            ★★★★★
+        </div>
+
+        <div class="notice">
+            <strong>Share your genuine experience ❤️</strong><br>
+            Below is a customer-review suggestion you may use as
+            inspiration. Please edit it or write your own honest
+            feedback before posting.
+        </div>
+
+        <div class="suggestion-label">
+            Review Suggestion
+        </div>
+
+        <div id="suggestionBox" class="suggestion-box">
+            Loading review...
+        </div>
+
+        <div id="counter" class="counter">
+            Review 1 of 200
+        </div>
+
+        <div class="button-row">
+
+            <button
+                type="button"
+                class="another-button"
+                onclick="showRandomReview()">
+                🔄 Try Another Review
+            </button>
+            <button
+                type="button"
+                class="copy-button"
+                onclick="copyCurrentReview()">
+                📋 Copy Review
+            </button>
+
+            <button
+                type="button"
+                class="google-button"
+                onclick="openGoogleReview()">
+                ⭐ Open Google Review
+            </button>
+
+        </div>
+
+        <div class="contact-actions">
+
+            <a
+                class="contact-action whatsapp-action"
+                href="https://wa.me/919147340209"
+                target="_blank"
+                rel="noopener noreferrer">
+                💬 WhatsApp
+            </a>
+
+            <a
+                class="contact-action call-action"
+                href="tel:+913348485511">
+                📞 Call
+            </a>
+
+            <a
+                class="contact-action map-action"
+                href="https://www.google.com/maps/dir/?api=1&destination=22.5773698,88.4375427"
+                target="_blank"
+                rel="noopener noreferrer">
+                📍 Directions
+            </a>
+
+        </div>
+<div class="steps">
+
+            <h3>How to leave your review</h3>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                    Click <strong>“Give Your Review on Google”</strong>.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                    Choose the rating that honestly reflects
+                    your experience.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                    Write your own review, or personalize the
+                    suggested text above.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>
+                    Submit your review directly on Google.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Thank you for supporting <strong>Zita Telecom</strong> ❤️
+        <br>
+        Your feedback helps us improve our service.
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+const reviews = [
+
+`Zita Telecom-এর service এখন পর্যন্ত বেশ ভালো লেগেছে। Connection stable এবং daily use-এর জন্য যথেষ্ট reliable.`,
+
+`I've been using Zita for my home internet and so far the service has been smooth.`,
+
+`ভালো connection, ভালো service, আর কোনো বড় ঝামেলা নেই—আমার experience positive.`,
+
+`Zita-এর internet আমার regular browsing আর streaming-এর জন্য বেশ ভালোভাবে কাজ করছে.`,
+
+`Honestly, I am quite happy with the service. The connection has been dependable for my everyday use.`,
+
+`আমার বাড়ির জন্য Zita নেওয়ার decisionটা এখন পর্যন্ত ভালোই মনে হচ্ছে.`,
+
+`Service quality is good and the connection has remained fairly consistent.`,
+
+`Zita-এর service নিয়ে এখন পর্যন্ত কোনো major complaint নেই। ভালোই চলছে.`,
+
+`I mainly use the connection for work and entertainment, and it has been working nicely.`,
+
+`কম খরচে এমন একটা reliable connection পাওয়া আমার কাছে ভালো ব্যাপার.`,
+
+`The internet has been stable enough for my daily work, video calls and general browsing.`,
+
+`Zita-এর service team এবং connection—দুটো নিয়েই আমার experience ভালো.`,
+
+`বেশ কিছুদিন ধরে ব্যবহার করছি। এখন পর্যন্ত connection quality ভালোই পেয়েছি.`,
+
+`Good service without unnecessary complications. That's what I like about Zita.`,
+
+`আমার daily internet requirements-এর জন্য Zita বেশ ভালো fit করেছে.`,
+
+`Connection ঠিকঠাক, speed ভালো এবং overall service নিয়ে আমি satisfied.`,
+
+`Zita has been providing a good internet experience for my household.`,
+
+`আমার usage খুব heavy না, কিন্তু যতটা ব্যবহার করি তার জন্য service যথেষ্ট ভালো.`,
+
+`The connection works well for browsing, YouTube and regular online work.`,
+
+`Zita ব্যবহার করে এখন পর্যন্ত experience বেশ comfortable.`,
+
+`Serviceটা simple এবং dependable। আমার জন্য এটাই সবচেয়ে important.`,
+
+`আমার area-তে Zita-এর connection বেশ ভালো perform করছে.`,
+
+`Good internet service and a generally hassle-free experience.`,
+
+`Zita-এর service নিয়ে এখন পর্যন্ত বেশ positive experience হয়েছে.`,
+
+`Internet connectionটা stable থাকছে, তাই regular work করতে সুবিধা হচ্ছে.`,
+
+`I've had a pretty smooth experience with Zita so far.`,
+
+`আমার বাড়িতে সবাই internet use করে, তবুও service নিয়ে বড় কোনো সমস্যা হচ্ছে না.`,
+
+`The service has been reliable for my normal household usage.`,
+
+`ভালো service আর stable connection—Zita-এর ক্ষেত্রে দুটোই পাচ্ছি.`,
+
+`আমার personal experience অনুযায়ী Zita-এর service বেশ ভালো.`,
+
+`I use it almost every day and the connection has been performing well.`,
+
+`Zita-এর connection আমার expectations-এর তুলনায় ভালোই হয়েছে.`,
+
+`Regular browsing থেকে streaming—সবকিছুতেই connection ভালো কাজ করছে.`,
+
+`No major issues so far. The service has been good and consistent.`,
+
+`আমার কাছে Zita-এর সবচেয়ে ভালো দিক হলো regular use-এ connection dependable থাকা.`,
+
+`Service quality নিয়ে এখন পর্যন্ত আমি satisfied.`,
+
+`Zita has been a convenient broadband option for my home.`,
+
+`বেশ ভালো service পাচ্ছি, বিশেষ করে regular internet usage-এর জন্য.`,
+
+`আমার experience-এ connection stable এবং service reliable.`,
+
+`The internet works well enough for everything I normally do online.`,
+
+`Zita-এর service নিয়ে এখন পর্যন্ত ভালোই feedback দেওয়ার মতো experience হয়েছে.`,
+
+`Daily use-এর জন্য connectionটা বেশ comfortable.`,
+
+`Good service, decent connection and a hassle-free experience overall.`,
+
+`আমার বাড়ির internet হিসেবে Zita বেশ ভালোভাবে কাজ করছে.`,
+
+`I haven't faced any major service-related problem so far.`,
+
+`Zita-এর connection নিয়ে এখন পর্যন্ত আমার experience smooth.`,
+
+`Work from home করার সময় connectionটা বেশ helpful হয়েছে.`,
+
+`Regular use-এর জন্য service quality আমার কাছে satisfactory.`,
+
+`The connection has been reasonably stable and useful for my everyday needs.`,
+
+`ভালো internet service চাইছিলাম, Zita সেটা আমার requirements অনুযায়ী দিচ্ছে.`,
+
+`এখন পর্যন্ত Zita নিয়ে কোনো বড় অভিযোগ নেই। Service ভালোই চলছে.`,
+
+`I am happy with how the connection has been performing lately.`,
+
+`Zita-এর service আমার daily online activities-এর জন্য যথেষ্ট reliable.`,
+
+`Good service and a comfortable overall internet experience.`,
+
+`আমার usage অনুযায়ী connection-এর performance ভালো পেয়েছি.`,
+
+`The service has been consistent enough for my regular work and entertainment.`,
+
+`Zita-এর internet নেওয়ার পর daily browsing নিয়ে কোনো বড় চিন্তা নেই.`,
+
+`ভালো connection, reasonable service এবং overall nice experience.`,
+
+`I've been using the service regularly and haven't had much trouble.`,
+
+`আমার বাড়ির জন্য connectionটা বেশ ভালো choice হয়েছে.`,
+
+`Zita-এর service quality এখন পর্যন্ত বেশ satisfying.`,
+
+`Streaming, browsing আর office work—সবকিছুর জন্য connection ঠিকঠাক চলছে.`,
+
+`Overall, Zita has given me a good home internet experience.`,
+
+`আমার কাছে serviceটা reliable এবং practical মনে হয়েছে.`,
+
+`Internetটা বেশ steady থাকে এবং regular use-এ ভালো performance দেয়.`,
+
+`Zita-এর service নিয়ে আমার experience এখন পর্যন্ত positive.`,
+
+`Good connection for normal day-to-day internet usage.`,
+
+`বাড়ির internet হিসেবে Zita-এর performance নিয়ে আমি মোটামুটি খুবই happy.`,
+
+`The service has been good enough that I haven't felt the need to look elsewhere.`,
+
+`আমার daily requirements-এর জন্য Zita বেশ ভালোভাবে কাজ করছে.`,
+
+`Zita-এর service simple, useful এবং reliable.`,
+
+`I am satisfied with the way the internet has been working at home.`,
+
+`ভালো service পেলে আলাদা করে বেশি কিছু বলার থাকে না। Zita আমার ক্ষেত্রে ভালোই চলছে.`,
+
+`Connection quality আমার expectations meet করছে.`,
+
+`Zita-এর service নিয়ে এখন পর্যন্ত কোনো serious issue face করিনি.`,
+
+`My experience has been quite positive, especially for regular home usage.`,
+
+`আমার family-এর regular internet use-এর জন্য connection ভালো perform করছে.`,
+
+`Good service and stable connectivity have made the experience quite convenient.`,
+
+`Zita ব্যবহার করে আমার internet-related experience এখন পর্যন্ত বেশ smooth.`,
+
+`The connection is reliable enough for my everyday online activities.`,
+
+`Zita-এর service আমার normal usage-এর জন্য যথেষ্ট ভালো.`,
+
+`Regular browsing আর streaming-এর ক্ষেত্রে performance নিয়ে আমি satisfied.`,
+
+`ভালো service, ভালো connection—সব মিলিয়ে আমার experience ভালো.`,
+
+`I appreciate having a connection that simply works without too much hassle.`,
+
+`আমার area-তে Zita-এর service নিয়ে এখন পর্যন্ত ভালো experience হয়েছে.`,
+
+`The internet has been useful for both personal and work-related activities.`,
+
+`Zita-এর connection daily use-এ আমাকে disappoint করেনি.`,
+
+`Service quality বেশ ভালো এবং connectionও dependable.`,
+
+`এখন পর্যন্ত Zita-এর service নিয়ে আমার কোনো বড় concern নেই.`,
+
+`Good internet service with a fairly smooth user experience.`,
+
+`আমার বাড়িতে একাধিক device use হলেও connection ভালোভাবেই manage করছে.`,
+
+`The overall quality of service has been good for my requirements.`,
+
+`Zita-এর internet আমার regular online work-এর জন্য বেশ helpful.`,
+
+`Connection stable থাকায় work এবং entertainment দুটোই comfortably করা যাচ্ছে.`,
+
+`আমার কাছে Zita-এর service বেশ reliable মনে হয়েছে.`,
+
+`I have been using it regularly and the experience has been positive.`,
+
+`Zita-এর service quality আমার daily needs-এর সঙ্গে ভালোভাবে match করছে.`,
+
+`কোনো unnecessary hassle ছাড়াই internet use করতে পারছি—এটাই ভালো লাগছে.`,
+
+`The connection has worked well for my home and regular usage.`,
+
+`এখন পর্যন্ত service নিয়ে আমি happy। আশা করছি এই quality maintain থাকবে.`,
+
+`Zita-এর internet আমার work, browsing আর entertainment-এর জন্য ভালোভাবে কাজ করছে.`,
+
+`Overall service quality বেশ ভালো পেয়েছি.`,
+
+`আমার experience অনুযায়ী connection reliable এবং service satisfactory.`,
+
+`The service has been stable and convenient for my household.`,
+
+`Zita নেওয়ার পর থেকে regular internet use বেশ সহজ হয়েছে.`,
+
+`ভালো connection-এর সঙ্গে ভালো service পাওয়াটা অবশ্যই plus point.`,
+
+`I have had a good experience with Zita so far.`,
+
+`আমার regular usage-এর জন্য internet speed এবং connection quality দুটোই যথেষ্ট ভালো.`,
+
+`Serviceটা dependable মনে হয়েছে, especially for everyday use.`,
+
+`Zita-এর connection আমার বাড়িতে বেশ smoothly চলছে.`,
+
+`এখন পর্যন্ত কোনো বড় problem না থাকায় overall experience ভালো.`,
+
+`Good service, stable internet and a comfortable experience.`,
+
+`আমি mostly browsing আর streaming করি, আর Zita-এর service সেই কাজের জন্য ভালো.`,
+
+`The connection has been reliable for online meetings and general browsing.`,
+
+`Zita-এর service নিয়ে এখন পর্যন্ত আমি বেশ সন্তুষ্ট.`,
+
+`আমার daily internet requirements সহজেই handle করছে.`,
+
+`Good experience overall. The service has been working as expected.`,
+
+`Connection quality নিয়ে এখন পর্যন্ত আমার কোনো complaint নেই.`,
+
+`Zita-এর internet regular household use-এর জন্য বেশ suitable.`,
+
+`Service quality ভালো এবং connectionও যথেষ্ট stable.`,
+
+`I've had no major difficulty with the service so far.`,
+
+`আমার experience-এ Zita-এর service consistent.`,
+
+`Work, YouTube, social media—সবকিছুতেই connection ভালোভাবে কাজ করছে.`,
+
+`The internet has been dependable for my normal routine.`,
+
+`Zita-এর service আমার expectation অনুযায়ী perform করছে.`,
+
+`Overall, quite a satisfactory internet experience.`,
+
+`আমার বাড়ির জন্য Zita-এর service নেওয়াটা ভালো decision হয়েছে.`,
+
+`Connectionটা stable থাকায় daily work করতে সুবিধা হচ্ছে.`,
+
+`The service is straightforward and reliable, which is exactly what I wanted.`,
+
+`Zita-এর internet নিয়ে এখন পর্যন্ত বেশ ভালোই experience হয়েছে.`,
+
+`ভালো connection পাওয়ার পাশাপাশি service quality-ও ভালো.`,
+
+`I am comfortable recommending Zita based on my own experience.`,
+
+`আমার usage অনুযায়ী serviceটা যথেষ্ট ভালো এবং dependable.`,
+
+`Zita-এর service আমার regular online activities-এর জন্য কোনো সমস্যা তৈরি করছে না.`,
+
+`Good connectivity and a generally positive customer experience.`,
+
+`আমার কাছে Zita-এর service quality বেশ impressive লেগেছে.`,
+
+`The internet has been performing nicely for everyday use.`,
+
+`Zita-এর connection নিয়ে এখন পর্যন্ত বড় কোনো issue face করিনি.`,
+
+`আমার daily browsing থেকে online work—সবকিছুর জন্য connection ঠিকঠাক চলছে.`,
+
+`So far, I am happy with the quality of service.`,
+
+`Zita-এর service আমার home internet needs-এর সঙ্গে ভালোভাবে match করেছে.`,
+
+`Connection stable হওয়ায় online কাজ করতে confidence পাচ্ছি.`,
+
+`Good service and dependable connectivity have made things easier.`,
+
+`আমার family-এর regular internet usage-এর জন্য service যথেষ্ট ভালো.`,
+
+`The overall internet experience has been smooth and convenient.`,
+
+`Zita-এর service এখন পর্যন্ত বেশ reliable মনে হয়েছে.`,
+
+`আমি বেশিরভাগ সময় online work করি, আর connection ভালোভাবে support করছে.`,
+
+`No major complaints from my side. The service is doing well.`,
+
+`Zita-এর internet আমার expectations-এর মধ্যে ভালোভাবেই আছে.`,
+
+`ভালো service-এর জন্য এখন পর্যন্ত Zita নিয়ে satisfied.`,
+
+`The connection has been useful for work, entertainment and general browsing.`,
+
+`আমার কাছে service quality এবং reliability দুটোই ভালো লেগেছে.`,
+
+`Zita-এর connection daily use-এ যথেষ্ট consistent.`,
+
+`Regular internet user হিসেবে আমার experience বেশ ভালো.`,
+
+`The service has been convenient and dependable for my household.`,
+
+`Zita-এর internet ব্যবহার করে এখন পর্যন্ত বেশ comfortable feel করছি.`,
+
+`Connectionটা আমার normal workload সহজেই handle করছে.`,
+
+`Good service without making the whole internet experience complicated.`,
+
+`আমার area-তে Zita-এর service নিয়ে experience positive.`,
+
+`The quality has been good enough for my regular online routine.`,
+
+`Zita-এর connection দিয়ে YouTube, browsing আর office কাজ comfortably করা যাচ্ছে.`,
+
+`Service নিয়ে এখন পর্যন্ত কোনো major disappointment হয়নি.`,
+
+`আমার usage অনুযায়ী Zita-এর service যথেষ্ট reliable.`,
+
+`I like the fact that the connection has been consistent for my daily needs.`,
+
+`Zita-এর internet আমার household-এর regular requirements-এর জন্য ভালো.`,
+
+`ভালো service এবং dependable connection—দুটোই পাচ্ছি.`,
+
+`My overall experience has been smooth so far.`,
+
+`Zita-এর service quality নিয়ে আমি বেশ happy.`,
+
+`Connection stable থাকায় online activities করতে কোনো unnecessary trouble হচ্ছে না.`,
+
+`The service has worked well for my usual home internet requirements.`,
+
+`আমার personal experience অনুযায়ী Zita-এর connection ভালো.`,
+
+`Zita-এর service আমার regular use-এর জন্য বেশ comfortable.`,
+
+`Good quality internet and a pleasant experience so far.`,
+
+`আমি mostly home use-এর জন্য connectionটা নিয়েছি এবং performance ভালো পাচ্ছি.`,
+
+`The service has been dependable enough for my everyday needs.`,
+
+`Zita-এর internet আমার বাড়িতে বেশ smoothly চলছে.`,
+
+`এখন পর্যন্ত service quality maintain হয়েছে, যা আমার ভালো লেগেছে.`,
+
+`Good connection and no major service complaints from my side.`,
+
+`আমার work এবং entertainment দুটোতেই connection ভালোভাবে কাজ করছে.`,
+
+`Zita-এর service আমার expectations-এর সঙ্গে ভালোভাবে match করেছে.`,
+
+`Overall internet quality বেশ satisfactory.`,
+
+`The connection has been reliable for the things I normally do online.`,
+
+`Zita-এর service নিয়ে এখন পর্যন্ত positive feedback-ই দিতে পারি.`,
+
+`আমার daily routine-এর জন্য internetটা বেশ useful হয়েছে.`,
+
+`Good service and stable connectivity have made the experience comfortable.`,
+
+`Connection quality ভালো থাকায় regular internet use সহজ হয়েছে.`,
+
+`Zita-এর service এখন পর্যন্ত আমার জন্য বেশ dependable.`,
+
+`I am satisfied with the way the service has been working at home.`,
+
+`আমার experience-এ Zita-এর service practical এবং reliable.`,
+
+`Regular use-এর জন্য connectionটা ভালো perform করছে.`,
+
+`The service has been smooth enough for my everyday online activities.`,
+
+`Zita-এর internet নিয়ে এখন পর্যন্ত আমার experience বেশ ভালো.`,
+
+`ভালো service-এর পাশাপাশি connection quality-ও satisfactory.`,
+
+`My household has been using the connection regularly and the experience is good.`,
+
+`Zita-এর service নিয়ে এখন পর্যন্ত কোনো বড় অভিযোগ নেই—ভালোই চলছে.`,
+
+`The internet has been reliable for my work and entertainment needs.`,
+
+`আমার usage অনুযায়ী Zita-এর connection বেশ ভালো choice হয়েছে.`,
+
+`Service quality ভালো, connection stable, আর overall experience positive.`,
+
+`এখন পর্যন্ত Zita-এর service নিয়ে আমি বেশ satisfied। Regular use-এ ভালোই চলছে.`,
+
+`Good service, dependable connection and a hassle-free experience—এই পর্যন্ত আমার Zita experience এতটাই.`
+
+];
+
+let currentIndex = -1;
+
+function showReview(index) {
+
+    if (index < 0 || index >= reviews.length) {
+        return;
+    }
+
+    currentIndex = index;
+
+    const box = document.getElementById("suggestionBox");
+    const counter = document.getElementById("counter");
+
+    box.classList.remove("active");
+
+    void box.offsetWidth;
+
+    box.textContent = reviews[index];
+
+    box.classList.add("active");
+
+    counter.textContent =
+        "Review " + (index + 1) + " of " + reviews.length;
+}
+
+function showRandomReview() {
+
+    let randomIndex;
+
+    do {
+        randomIndex =
+            Math.floor(Math.random() * reviews.length);
+    }
+    while (reviews.length > 1 && randomIndex === currentIndex);
+
+    showReview(randomIndex);
+}
+
+async function copyCurrentReview() {
+
+    const reviewText =
+        document.getElementById("suggestionBox").textContent.trim();
+
+    if (!reviewText || reviewText === "Loading review...") {
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(reviewText);
+
+        const button = document.querySelector(".copy-button");
+        const originalText = button.textContent;
+
+        button.textContent = "✓ Review Copied";
+
+        setTimeout(function () {
+            button.textContent = originalText;
+        }, 1800);
+
+    } catch (error) {
+        // Fallback for browsers where Clipboard API is unavailable.
+        const textArea = document.createElement("textarea");
+        textArea.value = reviewText;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            document.execCommand("copy");
+
+            const button = document.querySelector(".copy-button");
+            const originalText = button.textContent;
+
+            button.textContent = "✓ Review Copied";
+
+            setTimeout(function () {
+                button.textContent = originalText;
+            }, 1800);
+
+        } catch (fallbackError) {
+            alert("Please copy the review manually.");
+        }
+
+        document.body.removeChild(textArea);
+    }
+}
+
+function openGoogleReview() {
+
+    window.open(
+        "https://search.google.com/local/writereview?placeid=ChIJL_wmMKZ1AjoREM49qjTCk_k",
+        "_blank",
+        "noopener,noreferrer"
+    );
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Shuffle the review order every time the page loads.
+    for (let i = reviews.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [reviews[i], reviews[j]] = [reviews[j], reviews[i]];
+    }
+
+    showReview(0);
+
+});
+
+</script>
+
+</body>
+</html>
+<style>
+@media (max-width: 600px) {
+    .brand-logo { height: 58px; margin-bottom: 10px; }
+    .brand-logo img { width: 58px; height: 58px; }
+}
+</style>
